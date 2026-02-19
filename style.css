@@ -1,0 +1,46 @@
+body {
+  font-family: Arial, sans-serif;
+  padding: 20px;
+  max-width: 500px;
+  margin: auto;
+}
+
+h1, h2, h3 {
+  text-align: center;
+}
+
+input, select, button {
+  padding: 8px;
+  margin: 5px 0;
+}
+
+.store-row {
+  display: flex;
+  gap: 10px;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+li {
+  padding: 8px;
+  border-bottom: 1px solid #ddd;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.section-controls button {
+  margin-left: 5px;
+}
+
+button {
+  cursor: pointer;
+}
+
+.section-editor-header {
+  text-align: center;
+  margin-bottom: 5px;
+}
