@@ -1,0 +1,14 @@
+{
+  "stores": [
+    {
+      "name": "Costco Moncton",
+      "sections": ["Electronics", "Home Appliances", "Home Improvement", "Bakery", "Produce", "Fresh Meat", "Dairy", "Toilet Paper", "Frozen", "Food Aisles", "Pharmacy", "Snacks and Candy", "Clothing", "Middle Aisles"],
+      "items": []
+    },
+    {
+      "name": "Superstore Trinity Drive",
+      "sections": ["Produce", "Bakery", "Meat", "Pharmacy", "Dairy", "Frozen", "Liquor", "Yogurt and Cereal", "Spices and Baking", "Sauces", "Snacks and Drinks", "Cleaning Supplies", "Clothing"],
+      "items": []
+    }
+  ]
+}
