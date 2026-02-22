@@ -2,12 +2,26 @@
 const DEFAULT_SECTIONS = ["Electronics", "Home Appliances", "Garage Stuff", "Bakery", "Produce", "Meat", "Dairy", "Frozen", "Toilet Paper Section", "Food Aisles (Cereal and Sauces)", "Pharmacy", "Snacks and Candy", "Middle Aisles"];
 
 // ======= Data Initialization =======
-let stores = JSON.parse(localStorage.getItem("stores")) || [
-  { name: "Default Store", sections: DEFAULT_SECTIONS.slice(), items: [] }
-];
-
+let stores = JSON.parse(localStorage.getItem("stores"));
 let currentStoreIndex = JSON.parse(localStorage.getItem("currentStoreIndex")) || 0;
 let itemSections = JSON.parse(localStorage.getItem("itemSections")) || {};
+
+if (!stores) {
+  fetch("defaultData.json")
+    .then(res => res.json())
+    .then(data => {
+      stores = data.stores;
+      saveData();
+      renderStores();
+      renderList();
+      renderSections();
+      renderSectionEditor();
+    });
+} else {
+  saveData();
+}
+
+
 
 // Migrate old items if exist
 let oldItems = JSON.parse(localStorage.getItem("items"));
