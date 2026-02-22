@@ -7,47 +7,77 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+  <div id="app">
 
-  <h1>Grocery List</h1>
+    <!-- GROCERY LIST VIEW -->
+    <div id="listView" class="view active">
 
-  <!-- Store Selection -->
-  <h2>Select Store</h2>
-  <div class="store-row">
-    <select id="storeSelect" onchange="changeStore()"></select>
-    <button onclick="addStore()">+ Store</button>
+      <div class="nav-bar">
+        <div class="nav-title">Groceries</div>
+        <button class="nav-button" onclick="showSettings()">Manage</button>
+      </div>
+
+      <div class="content">
+
+        <div class="grouped">
+          <div class="row">
+            <label for="storeSelect">Store:</label>
+            <select id="storeSelect" onchange="changeStore()"></select>
+          </div>
+        </div>
+
+        <div class="grouped">
+          <div class="row">
+            <textarea id="pasteInput" placeholder="Paste grocery list..."></textarea>
+            <button onclick="pasteItems()">Import</button>
+          </div>
+        </div>
+
+        <div class="toggle-row">
+          <span>Hide Completed</span>
+          <label class="switch">
+            <input type="checkbox" id="hideCompletedToggle" />
+            <span class="slider"></span>
+          </label>
+        </div>
+
+        <ul id="groceryList"></ul>
+
+      </div>
+    </div>
+
+    <!-- SETTINGS VIEW -->
+    <div id="settingsView" class="view">
+        <!-- STORE MANAGEMENT -->
+
+              <div class="nav-bar">
+        <button class="nav-back" onclick="showList()">‹ Groceries</button>
+        <div class="nav-title small">Manage</div>
+        <div></div>
+      </div>
+
+        <div class="grouped">
+        <h3>Stores</h3>
+
+        <div class="row">
+            <select id="manageStoreSelect"></select>
+            <button onclick="addStore()">Add</button>
+            <button onclick="renameStore()">Edit</button>
+            <button onclick="deleteStore()">Remove</button>
+        </div>
+        </div>
+
+
+      
+
+        <h3>Sections</h3>
+        <ul id="sectionList"></ul>
+        <button onclick="addSection()">+ Add Section</button>
+      </div>
+
+    </div>
+
   </div>
-
-  <!-- Store Layout Editor -->
-  <h3>Store Layout</h3>
-  <div class="section-editor-header">
-    <button onclick="addSection()">+ Section</button>
-  </div>
-  <ul id="sectionList"></ul>
-
-  <hr>
-
-  <!-- Add Items Manually -->
-  <h2>Add Item</h2>
-  <div>
-    <input type="text" id="itemInput" placeholder="Add item..." />
-    <select id="sectionSelect"></select>
-    <button onclick="addItem()">Add</button>
-  </div>
-
-  <hr>
-
-  <!-- Paste Multiple Items -->
-  <h2>Paste Grocery List</h2>
-  <textarea id="pasteInput" placeholder="Paste items, one per line" rows="5" style="width:100%;"></textarea>
-  <br>
-  <button onclick="pasteItems()">Add Items</button>
-
-  <!-- Grocery List Display -->
-  <label>
-  <input type="checkbox" id="toggleCompleted">
-  Hide Completed Items
-</label>
-<ul id="groceryList"></ul>
 
   <script src="app.js"></script>
 </body>

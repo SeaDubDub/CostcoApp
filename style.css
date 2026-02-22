@@ -1,22 +1,73 @@
 body {
-  font-family: Arial, sans-serif;
-  padding: 20px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  padding: 10px;
   max-width: 500px;
   margin: auto;
+  background-color: #f9f9f9;
 }
 
-h1, h2, h3 {
-  text-align: center;
-}
-
-input, select, button {
-  padding: 8px;
-  margin: 5px 0;
-}
-
-.store-row {
+.nav-bar {
   display: flex;
-  gap: 10px;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  background-color: #007aff;
+  color: white;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+.nav-title {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.nav-title.small {
+  font-size: 16px;
+}
+
+.nav-button, .nav-back {
+  background-color: transparent;
+  border: none;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.content {
+  padding: 10px;
+}
+
+.grouped {
+  margin-bottom: 15px;
+}
+
+.row {
+  display: flex;
+  gap: 5px;
+  margin-bottom: 5px;
+}
+
+input[type="text"], textarea, select {
+  padding: 8px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  flex: 1;
+  font-size: 16px;
+}
+
+button {
+  padding: 8px 12px;
+  border-radius: 6px;
+  border: none;
+  background-color: #007aff;
+  color: white;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+button:hover {
+  background-color: #005bb5;
 }
 
 ul {
@@ -30,17 +81,75 @@ li {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  background-color: white;
+  border-radius: 6px;
+  margin-bottom: 5px;
 }
 
 .section-controls button {
   margin-left: 5px;
 }
 
-button {
-  cursor: pointer;
+.toggle-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
 }
 
-.section-editor-header {
-  text-align: center;
-  margin-bottom: 5px;
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 40px;
+  height: 20px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-color: #ccc;
+  border-radius: 20px;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 14px; width: 14px;
+  left: 3px; bottom: 3px;
+  background-color: white;
+  border-radius: 50%;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: #007aff;
+}
+
+input:checked + .slider:before {
+  transform: translateX(20px);
+}
+
+.view {
+  display: none;
+}
+
+.view.active {
+  display: block;
+}
+
+.section-header {
+  font-weight: bold;
+  background: #f2f2f2;
+  padding: 6px 8px;
+  margin-top: 12px;
+  border-radius: 6px;
+  list-style: none;
 }
